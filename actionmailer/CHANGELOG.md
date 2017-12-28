@@ -1,3 +1,11 @@
+*   Support multiple preview paths for mailers.
+
+    Option `config.action_mailer.preview_path` is deprecated in favor of
+    `config.action_mailer.preview_paths`. Appending paths to this configuration option will cause
+    those paths to be used in the search for mailer previews.
+
+    *fatkodima*
+
 *   Remove deprecated `ActionMailer::Base.receive` in favor of [Action Mailbox](https://github.com/rails/rails/tree/master/actionmailbox).
 
     *Rafael Mendonça França*

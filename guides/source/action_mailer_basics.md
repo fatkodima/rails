@@ -208,7 +208,7 @@ class UsersController < ApplicationController
 end
 ```
 
-NOTE: Active Job's default behavior is to execute jobs via the `:async` adapter. 
+NOTE: Active Job's default behavior is to execute jobs via the `:async` adapter.
 So, you can use `deliver_later` to send emails asynchronously.
 Active Job's default adapter runs jobs with an in-process thread pool.
 It's well-suited for the development/test environments, since it doesn't require
@@ -518,12 +518,12 @@ visually see the new style instantly. A list of previews are also available
 in <http://localhost:3000/rails/mailers>.
 
 By default, these preview classes live in `test/mailers/previews`.
-This can be configured using the `preview_path` option. For example, if you
-want to change it to `lib/mailer_previews`, you can configure it in
+This can be configured using the `preview_paths` option. For example, if you
+want to add `lib/mailer_previews` to it, you can configure it in
 `config/application.rb`:
 
 ```ruby
-config.action_mailer.preview_path = "#{Rails.root}/lib/mailer_previews"
+config.action_mailer.preview_paths << "#{Rails.root}/lib/mailer_previews"
 ```
 
 ### Generating URLs in Action Mailer Views
