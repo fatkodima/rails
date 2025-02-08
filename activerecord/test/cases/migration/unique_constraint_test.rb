@@ -228,6 +228,15 @@ if ActiveRecord::Base.lease_connection.supports_unique_constraints?
           assert_equal "sections", constraint.table_name
           assert_equal ["new_position"], constraint.column
         end
+
+        def test_change_table_add_unique_constraint
+          @connection.change_table(:sections) do |t|
+            t.unique_constraint :position, name: :unique_section_position
+          end
+
+          unique_constraints = @connection.unique_constraints("sections")
+          assert_equal 1, unique_constraints.size
+        end
       end
     end
   end
